@@ -1,4 +1,4 @@
-{
+var plans = {
    "plans":[
       {
          "id":1,

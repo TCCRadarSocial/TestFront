@@ -6,6 +6,9 @@
 
         <link href="./css/style.css" rel="stylesheet">
 
+
+         <script src="./js/data.js"></script>      
+        
         <!-- jQuery -->
         <script src="./js/jquery-3.2.1.min.js"></script>
 
@@ -16,18 +19,14 @@
         <!-- AngularJS -->
         <script src="./js/angular.min.js"></script>
         <script src="./js/angular-route.min.js"></script>
-
-        
         <script src="./js/controller.geral.js"></script>
 
-        <!-- require -->
-        <!--<script src="./js/require.js"></script>-->
-        <!--<script data-main="./js/app.js" src="./js/require.js"></script>-->
+
         
     </head>
 
-    <body ng-app="myAppAssinatura" ng-controller="ctrlGeral">
-        <div class="container">
+    <body ng-app="myAppAssinatura">
+        <div class="container" ng-controller="ctrlGeral">
             <div id="myModal" class="modal show" role="dialog">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -36,7 +35,7 @@
                     <h4 class="modal-title">Assine o Sexlog VIP</h4>
                   </div>
                   <div class="modal-body">
-                    <div class="col-lg-12 navigation">
+                    <div class="col-lg-12 navigation" ng-hide="showFinal">
                         <ul>
                             <li>
                                 Escolha o plano ideal para você
@@ -47,17 +46,40 @@
                         </ul>
                     </div>
                     <div class="col-lg-12">
-                        <div class="col-lg-10">
+                        <div class="col-lg-10" id="divPlano" ng-if="showPlano" >
                             <div class="col-lg-6">
-
+                            {{currency}} {{integer}},{{decimal}} {{periodicy}}
+                            <br>
+                            {{total}}
+                            <br>
+                            <span ng-repeat="payment in payments">{{payment}}<span>
                             </div>
                             <div class="col-lg-6">
+                                <div ng-repeat="plan in plans.plans">
+                                    <label>
+                                        <input type="radio" ng-model="option" ng-click="click(plan)" name="plano" value="{{plan.id}}" />
+                                        {{plan.name}}
+
+                                        {{plan.discount}}
+                                    </label>
+                                </div>
                             </div>
                         </div>   
+                        <div class="col-lg-10" id="divFormaPagto" ng-if="showProxPasso">
+                            forma pagto
+
+                        </div>
+                        <div class="col-lg-10" id="divFinal" ng-if="showFinal">
+                            final
+
+                             <button type="button" class="btn btn-default" ng-show="showFinal">Explorar o Sexlog</button>
+
+                        </div>
                     </div>
                   </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Próximo passo: pagamento</button>
+                  <div class="modal-footer" ng-hide="showFinal">
+                    <button type="button" class="btn btn-default" ng-show="showPlano" ng-click="showProxPasso=true;showPlano=false" >Próximo passo: pagamento</button>
+                    <button type="button" class="btn btn-default" ng-show="showProxPasso" ng-click="showProxPasso=false;showFinal=true" >Concluir minha assinatura</button>
                   </div>
                 </div>
               </div>
