@@ -13,15 +13,15 @@ var plans = {
          },
          "parc":[],
          "payments": [
-             "Pagamento no <b>cartão de crédito</b>",
-             "Parcela única no <b>débito em conta</b>",
-             "Pagamento no <b>boleto bancário</b>"
+             "Pagamento no cartão de crédito",
+             "Parcela única no débito em conta",
+             "Pagamento no boleto bancário"
          ]
       },
       {
          "id":2,
-         "name":"3 mês",
-         "discount":"Economize 40%",
+         "name":"3 meses",
+         "discount":"Economize 30%",
          "total":"Total: R$ 89,70 em até 3x iguais no cartão de crédito",
          "price":{
             "currency":"R$",
@@ -35,15 +35,15 @@ var plans = {
             "Parcelado em 3x de R$ 29,90"
         ],
         "payments": [
-            "Até 3x iguais no <b>cartão de crédito</b>",
-            "Parcela única no <b>débito em conta</b>",
-            "Pagamento no <b>boleto bancário</b>"
+            "Até 3x iguais no cartão de crédito",
+            "Parcela única no débito em conta",
+            "Pagamento no boleto bancário"
         ]
       },
       {
          "id":3,
-         "name":"6 mês",
-         "discount":"Economize 54%",
+         "name":"6 meses",
+         "discount":"Economize 50%",
          "total":"Total: R$ 137,40 em até 6x iguais no cartão de crédito",
          "price":{
             "currency":"R$",
@@ -60,9 +60,9 @@ var plans = {
             "Parcelado em 6x de R$ 22,90"
         ],
         "payments": [
-            "Até 6x iguais no <b>cartão de crédito</b>",
-            "Parcela única no <b>débito em conta</b>",
-            "Pagamento no <b>boleto bancário</b>"
+            "Até 6x iguais no cartão de crédito",
+            "Parcela única no débito em conta",
+            "Pagamento no boleto bancário"
         ]
       }
    ]

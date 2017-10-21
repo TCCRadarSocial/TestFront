@@ -19,12 +19,8 @@
         <!-- AngularJS -->
         <script src="./js/angular.min.js"></script>
         <script src="./js/angular-route.min.js"></script>
-        <script src="./js/controller.geral.js"></script>
-
-
-        
+        <script src="./js/controller.geral.js"></script>        
     </head>
-
     <body ng-app="myAppAssinatura">
         <div class="container" ng-controller="ctrlGeral">
             <div id="myModal" class="modal show" role="dialog">
@@ -32,54 +28,85 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close">&times;</button>
-                    <h4 class="modal-title">Assine o Sexlog VIP</h4>
+                    <h4 class="modal-title"><b>Assine o Sexlog VIP</b></h4>
                   </div>
-                  <div class="modal-body">
-                    <div class="col-lg-12 navigation" ng-hide="showFinal">
-                        <ul>
-                            <li>
+                  <div class="body-modal">
+                    <div class="col-lg-12" ng-hide="showFinal" id="divNavigation">
+                        <ul id="navigation">
+                            <li class="col-lg-6 current" id="primeiro">
                                 Escolha o plano ideal para você
                             </li>
-                            <li>
+                            <li class="col-lg-6" id="segundo">
                                 Escolha a forma de pagamento
                             </li>
                         </ul>
-                    </div>
+                    </div>                    
                     <div class="col-lg-12">
-                        <div class="col-lg-10" id="divPlano" ng-if="showPlano" >
+                        <div class="col-lg-12" id="divPlano" ng-if="showPlano" >
                             <div class="col-lg-6">
-                            {{currency}} {{integer}},{{decimal}} {{periodicy}}
+                                <div class="col-lg-12" id="destaquePrecos">
+                                    <div class="col-lg-2" id="textoBase">
+                                        {{currency}} 
+                                    </div>
+                                    <div class="col-lg-5" id="precoInt">
+                                        {{integer}}
+                                    </div>
+                                    <div class="col-lg-2" id="complementos">
+                                        <span class="precoDecimal">
+                                            {{decimal}}
+                                        </span>
+                                        <br><br>
+                                        <span class="textoBasePeriodicy">
+                                            {{periodicy}}
+                                        </span>
+                                    </div>
+                                </div>
+                            <div>
+                                {{total}}
+                            </div>
                             <br>
-                            {{total}}
-                            <br>
-                            <span ng-repeat="payment in payments">{{payment}}<span>
+                            <div class="col-lg-1" id="images">
+                                <img src="./img/icon-credit-card.svg"><br>
+                                <img src="./img/icon-debit.svg"><br>
+                                <img src="./img/icon-boleto.svg">
+                            </div>
+                            <div >
+                            <span ng-repeat="payment in payments" class="payments">
+                                {{payment}}
+                                <br>
+                            <span>
+                            </div>
                             </div>
                             <div class="col-lg-6">
-                                <div ng-repeat="plan in plans.plans">
+                                <div ng-repeat="plan in plans.plans" class="opcoesPlanos" id="div{{plan.id}}">
                                     <label>
                                         <input type="radio" ng-model="option" ng-click="click(plan)" name="plano" value="{{plan.id}}" />
                                         {{plan.name}}
 
-                                        {{plan.discount}}
                                     </label>
+                                        <span>
+                                        {{plan.discount}}
+                                        <span>
                                 </div>
                             </div>
                         </div>   
                         <div class="col-lg-10" id="divFormaPagto" ng-if="showProxPasso">
                             forma pagto
-
                         </div>
                         <div class="col-lg-10" id="divFinal" ng-if="showFinal">
                             final
-
-                             <button type="button" class="btn btn-default" ng-show="showFinal">Explorar o Sexlog</button>
+                             <button type="button" class="btn buttonProx" ng-show="showFinal">Explorar o Sexlog</button>
 
                         </div>
                     </div>
                   </div>
                   <div class="modal-footer" ng-hide="showFinal">
-                    <button type="button" class="btn btn-default" ng-show="showPlano" ng-click="showProxPasso=true;showPlano=false" >Próximo passo: pagamento</button>
-                    <button type="button" class="btn btn-default" ng-show="showProxPasso" ng-click="showProxPasso=false;showFinal=true" >Concluir minha assinatura</button>
+                    <span class="secure">
+                        <img src="./img/icon-secure.png"/>
+                    </span>
+
+                    <button type="button" class=" btn buttonProx" ng-show="showPlano" ng-click="showProxPasso=true;showPlano=false;ativaProximo()" >Próximo passo: pagamento</button>
+                    <button type="button" class="btn buttonProx" ng-show="showProxPasso" ng-click="showProxPasso=false;showFinal=true" >Concluir minha assinatura</button>
                   </div>
                 </div>
               </div>
