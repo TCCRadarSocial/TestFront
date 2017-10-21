@@ -63,6 +63,7 @@
                                 </div>
                             <div>
                                 {{total}}
+                                <hr class="linha-separadora"/>
                             </div>
                             <br>
                             <div class="col-lg-1" id="images">
@@ -90,12 +91,67 @@
                                 </div>
                             </div>
                         </div>   
-                        <div class="col-lg-10" id="divFormaPagto" ng-if="showProxPasso">
-                            forma pagto
+                        <div class="col-lg-12" id="divFormaPagto" ng-if="showProxPasso">
+                            <div class="col-lg-12" id="planoEscolhido" >
+                                Plano escolhido: <span>{{planoEscolhidoNome}} - {{planoEscolhidoTotal}}</span>
+
+                                <hr class="linha-separadora"/>
+                            </div>
+                           <div class="col-lg-12 form">
+                                <div class="col-lg-6" style="padding: 0px;">
+                                    <label>Número do cartão
+                                    </label>
+                                        <input type="text"  class="form-control col-lg-12" placeholder="Número do cartão"/>
+                                </div>
+                                <div class="col-lg-6">
+                                     
+                                        <div class="col-lg-12" style="padding: 0px;">
+                                            <div class="col-lg-12" style="padding: 0px;">
+                                                <label>Validade   
+                                                </label>     
+                                            </div>
+                                            <div class="col-lg-6" style="padding: 0px;">
+                                                <select class="form-control col-lg-6" id="mes">
+                                                    <option hidden>Mês</option>
+                                                    <option ng-repeat="(key,value) in meses" value="{{key}}">{{value}}</option>
+                                                </select>                  
+                                            </div>   
+                                            <div class="col-lg-6" style="padding: 0px;">             
+                                                <select class="form-control col-lg-6" id="ano">
+                                                    <option hidden>Ano</option>
+                                                    <option ng-repeat="ano in anos" value="ano">{{ano}}</option>
+                                                </select>    
+                                            </div>   
+                                        </div>
+
+                                </div>
+
+                            </div>
+                            <div class="col-lg-12" style="margin-bottom: 30px;">
+                                <div class="col-lg-6" style="padding: 0px;">
+                                    <label>Nome do titular</label>
+                                        <input type="text"  class="form-control col-lg-12" placeholder="Nome do titular">
+                                    
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Código de segurança</label>
+                                        <input type="text"  class="form-control col-lg-12" placeholder="000">
+                                    
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <span class="alertPagto">Para sua privacidade, a cobrança será feita em nome de "assinet-pgto-sl"</span>
+                            </div>
                         </div>
-                        <div class="col-lg-10" id="divFinal" ng-if="showFinal">
-                            final
-                             <button type="button" class="btn buttonProx" ng-show="showFinal">Explorar o Sexlog</button>
+                        <div class="col-lg-12" id="divFinal" ng-if="showFinal">
+                            <img src="./img/check.png">
+                            <br>
+                            <span>
+                                <h2>Parabens!</h2>
+                                <h3>Você agora é um assinante Sexlog!</h3>
+                            </span>
+                            <br>
+                             <button type="button" class="btn buttonExplorar" ng-show="showFinal">Explorar o Sexlog</button>
 
                         </div>
                     </div>

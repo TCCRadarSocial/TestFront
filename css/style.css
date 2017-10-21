@@ -17,6 +17,13 @@
 	color:#fff;
 }
 
+.buttonExplorar{
+	background-color: #5c0f6c;
+	color:#fff;
+}
+
+
+
 .buttonProx:hover{
 	color:#fff;
 }
@@ -37,7 +44,6 @@
 	display: inline-block;
 	vertical-align: top;
 }*/
-
 .modal-header{
     text-align: center;
 }
@@ -45,6 +51,32 @@
 .modal-title{
 	color: #661577;
 
+}
+
+#planoEscolhido{
+	padding-top:20px;
+	padding-bottom: 15px;
+
+}
+
+.linha-separadora{
+	border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #999;
+    margin: 5px;
+}
+
+#planoEscolhido span{
+	
+}
+
+.alertPagto{
+	padding: 15px;
+	background-color: #fcf7de;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ffec83;
+	color: #b8893b;
 }
 
 .secure{
@@ -120,4 +152,17 @@ ul{
 
 #divPlano{
 	padding-top:20px;
+}
+
+#divFinal{
+	text-align: center;
+	padding: 30px;
+}
+
+h2{
+	margin: 5px;
+}
+
+h3{
+	margin: 5px;
 }
