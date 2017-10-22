@@ -97,11 +97,17 @@
 
                                 <hr class="linha-separadora"/>
                             </div>
+                            <div class="col-lg-12 erroPagto" ng-if="erros.length > 0">
+                                <span>Preencha corretamente os seguintes campos:</span>
+                                <ul>
+                                    <li ng-repeat="erro in erros">- {{erro}}</li>
+                                </ul>
+                            </div>
                            <div class="col-lg-12 form">
                                 <div class="col-lg-6" style="padding: 0px;">
                                     <label>Número do cartão
                                     </label>
-                                        <input type="text"  class="form-control col-lg-12" placeholder="Número do cartão"/>
+                                        <input type="text" id="nr_cartao" class="form-control col-lg-12" placeholder="Número do cartão" onkeyup="this.value=this.value.replace(/[^\d]/,'')"/>
                                 </div>
                                 <div class="col-lg-6">
                                      
@@ -112,13 +118,13 @@
                                             </div>
                                             <div class="col-lg-6" style="padding: 0px;">
                                                 <select class="form-control col-lg-6" id="mes">
-                                                    <option hidden>Mês</option>
+                                                    <option hidden value="">Mês</option>
                                                     <option ng-repeat="(key,value) in meses" value="{{key}}">{{value}}</option>
                                                 </select>                  
                                             </div>   
                                             <div class="col-lg-6" style="padding: 0px;">             
                                                 <select class="form-control col-lg-6" id="ano">
-                                                    <option hidden>Ano</option>
+                                                    <option hidden value="">Ano</option>
                                                     <option ng-repeat="ano in anos" value="ano">{{ano}}</option>
                                                 </select>    
                                             </div>   
@@ -130,12 +136,12 @@
                             <div class="col-lg-12" style="margin-bottom: 30px;">
                                 <div class="col-lg-6" style="padding: 0px;">
                                     <label>Nome do titular</label>
-                                        <input type="text"  class="form-control col-lg-12" placeholder="Nome do titular">
+                                        <input type="text"  class="form-control col-lg-12" id="nome_titular" placeholder="Nome do titular" onkeydown="upperCaseF(this)"/>
                                     
                                 </div>
                                 <div class="col-lg-6">
                                     <label>Código de segurança</label>
-                                        <input type="text"  class="form-control col-lg-12" placeholder="000">
+                                        <input type="text"  class="form-control col-lg-12" id="cod_seguranca" placeholder="000" maxlength="3" onkeyup="this.value=this.value.replace(/[^\d]/,'')"/>
                                     
                                 </div>
                             </div>
@@ -162,7 +168,7 @@
                     </span>
 
                     <button type="button" class=" btn buttonProx" ng-show="showPlano" ng-click="showProxPasso=true;showPlano=false;ativaProximo()" >Próximo passo: pagamento</button>
-                    <button type="button" class="btn buttonProx" ng-show="showProxPasso" ng-click="showProxPasso=false;showFinal=true" >Concluir minha assinatura</button>
+                    <button type="button" class="btn buttonProx" ng-show="showProxPasso" ng-click="valida()" >Concluir minha assinatura</button>
                   </div>
                 </div>
               </div>
