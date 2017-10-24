@@ -1,38 +1,23 @@
+@font-face {
+  font-family: 'M-2c-heavy';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/M-2c-heavy.ttf.woff) format('woff');
+}
+
 #divNavigation{
     padding: 0px;
     display: block;
 }
 
-/*
-
-@media screen and(max-width: 479px) {
-     #divNavigation{
-     	display: none;
-     }
-}
-
-@media screen and (min-width: 480px) and (max-width: 767px) {
-     #divNavigation{
-     	display: block;
-     }
-
-}
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    #divNavigation{
-     	display: block;
-     }
-
-}
-*/
-
-
-
-
-
 .dialog-modal {
     width: 80%;
     margin: 30px auto;
 
+}
+
+.form{
+	color:#7d7d7d;
 }
 .modal {
 	background-color: #242424;
@@ -66,11 +51,21 @@
 
 #precoInt{
 	font-size:5em;
+	font-family: "M-2c-heavy";
+}
+
+.precoDecimal{
+	font-size:2em;
+	font-family: "M-2c-heavy";
 }
 
 #destaquePrecos{
 	color:#661577;
 	text-align: center;
+}
+
+#textoBase{
+	color:#7d7d7d;
 }
 
 #destaquePrecos .textoBasePeriodicy{
@@ -99,8 +94,8 @@
 .linha-separadora{
 	border: 0;
     border-bottom: 1px dashed #ccc;
-    background: #999;
     margin: 5px;
+    color: #cbcbcb;
 }
 
 #planoEscolhido span{
@@ -135,6 +130,7 @@
 
 .payments{
 	padding-left:5px;
+	color: #7d7d7d;
 }
 .opcoesPlanos{
 	padding:10px;
@@ -214,6 +210,7 @@ h3{
 
 #divTotal{
    		display: block;
+   		color:#7d7d7d;
    	}
 #footerMobile{
 	display: none;
@@ -282,3 +279,5 @@ h3{
 		display: none;
 	}
 }
+
+
