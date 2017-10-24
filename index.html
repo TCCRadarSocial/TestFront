@@ -44,7 +44,7 @@
                     </div>                    
                     <div class="col-lg-12 col-md-12">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="divPlano" ng-if="showPlano" >
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="destaquePrecos">
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" id="textoBase">
                                         {{currency}} 
@@ -79,7 +79,7 @@
                                 </span>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div ng-repeat="plan in plans.plans" class="opcoesPlanos" id="div{{plan.id}}">
                                     <label>
                                         <input type="radio" ng-model="option" ng-click="click(plan)" name="plano" value="{{plan.id}}" />
